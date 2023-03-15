@@ -15,9 +15,9 @@
  */
 package com.alibaba.druid.util;
 
-import javax.servlet.GenericServlet;
-import javax.servlet.ServletContext;
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.GenericServlet;
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.http.HttpServletRequest;
 
 public class DruidWebUtils {
     public static String getRemoteAddr(HttpServletRequest request) {

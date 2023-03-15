@@ -5,8 +5,8 @@ import com.alibaba.druid.filter.FilterAdapter;
 import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.proxy.jdbc.DataSourceProxy;
 import com.alibaba.druid.spring.boot.demo.DemoApplication;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import jakarta.annotation.Resource;
+import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -14,9 +14,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.junit4.SpringRunner;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -24,7 +22,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * @author lihengming [89921218@qq.com]
  */
-@RunWith(SpringRunner.class)
 @SpringBootTest(classes = {DemoApplication.class, DruidFilterTestCase.Config.class})
 @ActiveProfiles("filter")
 public class DruidFilterTestCase {

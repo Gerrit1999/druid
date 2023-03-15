@@ -17,7 +17,11 @@ package com.alibaba.druid.support.spring.mvc;
 
 import com.alibaba.druid.filter.stat.StatFilterContext;
 import com.alibaba.druid.support.http.AbstractWebStatImpl;
-import com.alibaba.druid.support.http.stat.*;
+import com.alibaba.druid.support.http.stat.WebAppStat;
+import com.alibaba.druid.support.http.stat.WebAppStatManager;
+import com.alibaba.druid.support.http.stat.WebRequestStat;
+import com.alibaba.druid.support.http.stat.WebSessionStat;
+import com.alibaba.druid.support.http.stat.WebURIStat;
 import com.alibaba.druid.support.profile.ProfileEntryKey;
 import com.alibaba.druid.support.profile.ProfileEntryReqStat;
 import com.alibaba.druid.support.profile.Profiler;
@@ -28,9 +32,9 @@ import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.HandlerMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.ServletContext;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 import java.util.Map;
 

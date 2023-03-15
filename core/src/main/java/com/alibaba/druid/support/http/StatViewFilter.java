@@ -21,13 +21,23 @@ import com.alibaba.druid.support.logging.Log;
 import com.alibaba.druid.support.logging.LogFactory;
 import com.alibaba.druid.util.StringUtils;
 
-import javax.servlet.*;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.Filter;
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.FilterConfig;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-import static com.alibaba.druid.support.http.ResourceServlet.*;
+import static com.alibaba.druid.support.http.ResourceServlet.PARAM_NAME_ALLOW;
+import static com.alibaba.druid.support.http.ResourceServlet.PARAM_NAME_DENY;
+import static com.alibaba.druid.support.http.ResourceServlet.PARAM_NAME_PASSWORD;
+import static com.alibaba.druid.support.http.ResourceServlet.PARAM_NAME_USERNAME;
+import static com.alibaba.druid.support.http.ResourceServlet.PARAM_REMOTE_ADDR;
+import static com.alibaba.druid.support.http.ResourceServlet.ResourceHandler;
 
 public class StatViewFilter implements Filter {
     public static final String PARAM_NAME_PATH = "path";
